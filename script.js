@@ -16,7 +16,7 @@ class App {
     this.canvas = document.getElementById('canvas')
     this.icon = document.getElementById('icon')
     this.ctx = this.canvas.getContext('2d')
-    this.mouse = vec2.create()
+    this.mouse = { x: 0, y: 0 }
     this.mousein = false
     this.keys = []
     this.smileys = ['🤔', '🙃', '😉']
@@ -38,7 +38,10 @@ class App {
 
   onMouseMove(e) {
     if (!this.mousein) this.mousein = true
-    vec2.set(this.mouse, e.x, e.y)
+    this.mouse = {
+      x: e.x,
+      y: e.y
+    }
   }
 
   animate() {
@@ -63,7 +66,7 @@ class App {
     const smiley = this.smileys[i]
     this.ctx.save()
     this.ctx.beginPath()
-    this.ctx.translate(this.mouse[0], this.mouse[1])
+    this.ctx.translate(this.mouse.x, this.mouse.y)
     this.ctx.font = '30px sans-serif'
     this.ctx.fillText(smiley, -15, 15)
     this.ctx.closePath()
