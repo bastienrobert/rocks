@@ -19,7 +19,7 @@ class App {
     this.mouse = { x: 0, y: 0 }
     this.mousein = false
     this.keys = []
-    this.smileys = ['🤔', '🙃', '😉']
+    this.smileys = ['😍', '🙃', '😉', '🌝', '😸', '🌈', '☀️', '🔥']
 
     this.now = Date.now()
     this.lastTime = this.now
@@ -84,7 +84,7 @@ class App {
   konami() {
     console.log('%c Ho yeah 😎 ', 'background: #C1EDF5; color: #EA4C64')
     this.onResize()
-    this.smileys = ['🍆', '💎', '😏', '👃', '💦']
+    this.smileys = ['🍆', '💎', '😏', '👃', '💦', '😈']
     this.icon.innerHTML = '🍑'
   }
 
